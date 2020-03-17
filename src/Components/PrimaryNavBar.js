@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import history from "../Helpers/history";
 import "./PrimaryNavBar.css";
 
+import { value } from "../Common/common.js";
+
 const PrimaryNavBar = ({ state, ...props }) => {
   const handleLogOff = () => {
     sessionStorage.clear();
@@ -25,7 +27,7 @@ const PrimaryNavBar = ({ state, ...props }) => {
       <li className="li">
         <Link to="/community">Community</Link>
       </li>
-      {state.role === "admin" ? (
+      {state.role === value.admin ? (
         <li className="admin">
           <Link className="link" to="/admin">
             Admin
