@@ -5,6 +5,8 @@ import Main from "../Layouts/Main";
 import { Router } from "react-router-dom";
 import history from "../Helpers/history";
 
+import { key } from "../Common/common.js";
+
 class App extends React.Component {
   state = {
     token: "",
@@ -22,7 +24,8 @@ class App extends React.Component {
 
   componentDidMount() {
     const isLogged =
-      sessionStorage.getItem("isLogged") ?? sessionStorage.getItem("isLogged");
+      sessionStorage.getItem(key.isLogged) ??
+      sessionStorage.getItem(key.isLogged);
     const role = sessionStorage.getItem("role");
     this.setState({
       isLogged: isLogged,
@@ -31,8 +34,8 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    const isLogged = sessionStorage.getItem("isLogged");
-    const role = sessionStorage.getItem("role");
+    const isLogged = sessionStorage.getItem(key.isLogged);
+    const role = sessionStorage.getItem(key.role);
     if (this.state.isLogged !== isLogged) {
       this.setState({
         isLogged: isLogged,

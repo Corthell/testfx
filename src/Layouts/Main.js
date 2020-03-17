@@ -9,26 +9,48 @@ import Wallet from "../View/Wallet";
 import Community from "../View/Community";
 import Admin from "../View/Admin";
 
+import { value } from "../Common/common.js";
+
 const Main = ({ state }) => {
   return (
     <div className="main__wrapper">
       <Route exact path="/">
-        {state.isLogged ? <Articles /> : <Home />}
+        {state.isLogged === value.isLogged ? <Articles /> : <Home />}
       </Route>
       <Route exact path="/articles">
-        {state.isLogged ? <Articles /> : <Login state={state} />}
+        {state.isLogged === value.isLogged ? (
+          <Articles />
+        ) : (
+          <Login state={state} />
+        )}
       </Route>
       <Route exact path="/profile">
-        {state.isLogged ? <Profile /> : <Login state={state} />}
+        {state.isLogged === value.isLogged ? (
+          <Profile />
+        ) : (
+          <Login state={state} />
+        )}
       </Route>
       <Route exact path="/wallet">
-        {state.isLogged ? <Wallet /> : <Login state={state} />}
+        {state.isLogged === value.isLogged ? (
+          <Wallet />
+        ) : (
+          <Login state={state} />
+        )}
       </Route>
       <Route exact path="/community">
-        {state.isLogged ? <Community /> : <Login state={state} />}
+        {state.isLogged === value.isLogged ? (
+          <Community />
+        ) : (
+          <Login state={state} />
+        )}
       </Route>
       <Route exact path="/admin">
-        {state.isLogged ? <Admin /> : <Login state={state} />}
+        {state.isLogged === value.isLogged ? (
+          <Admin />
+        ) : (
+          <Login state={state} />
+        )}
       </Route>
       <Route exact path="/login">
         <Login state={state} />

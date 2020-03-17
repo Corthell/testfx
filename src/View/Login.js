@@ -1,5 +1,6 @@
 import React from "react";
 import history from "../Helpers/history";
+import { key, value } from "../Common/common.js";
 
 import "./Style.css";
 
@@ -27,12 +28,12 @@ class Login extends React.Component {
   handleAutentication = password => {
     switch (password) {
       case "admin":
-        sessionStorage.setItem("role", "admin");
-        sessionStorage.setItem("isLogged", true);
+        sessionStorage.setItem(key.role, value.admin);
+        sessionStorage.setItem(key.isLogged, value.isLogged);
         return true;
       case "user":
-        sessionStorage.setItem("role", "user");
-        sessionStorage.setItem("isLogged", true);
+        sessionStorage.setItem(key.role, value.user);
+        sessionStorage.setItem(key.isLogged, value.isLogged);
         return true;
 
       default:
