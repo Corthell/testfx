@@ -1,0 +1,33 @@
+.ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgb(115, 190, 252);
+
+  }
+  .li a {
+    display: block;
+    color: rgb(0, 105, 190);
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .li :hover {
+    background-color: #ddd;
+  }
+  
+  .li a.active {
+    color: black;
+    background-color: rgb(0, 255, 85);
+  }
+  .admin {
+      background-color: rgb(218, 5, 5);
+  }
+  .admin:hover {
+    background-color: rgb(145, 0, 0);
+}
+.link {
+  color: white;
+  text-decoration: none;
+}
